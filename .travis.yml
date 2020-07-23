@@ -3,6 +3,7 @@ node_js:
   - lts/*
 script:
   - npm i vuepress
+  - yarn add moment
   - npm run docs:build # 执行命令
   - yarn cname
 deploy:
