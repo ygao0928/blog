@@ -2,6 +2,7 @@ language: node_js # node环境
 node_js:
   - lts/*
 script:
+  - npm i vuepress
   - npm run docs:build # 执行命令
   - yarn cname
 deploy:
