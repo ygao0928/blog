@@ -17,7 +17,8 @@ module.exports = {
       title: 'Vue',
       collapsable: false,
       children: [
-        { title: '前言', path: '/api/front/vue/' }
+        { title: '前言', path: '/api/front/vue/' },
+        { title: 'vue开发环境', path: '/api/front/vue/vue开发环境' }
       ]
     }
   ],
