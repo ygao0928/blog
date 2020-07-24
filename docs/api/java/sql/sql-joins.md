@@ -4,15 +4,13 @@
 
 # SQL Joins 用法
 
-> 在网上看到一张图非常直白的表明join的用法
-
 ::: tip
 
 在网上看到一张图非常直白的表明join的用法
 
 :::
 
- **SQL JOINS **:
+ **SQL JOINS ** :
 
 ![image-20200724114954419](https://kevingao-blog.oss-cn-shanghai.aliyuncs.com/img/image-20200724114954419.png)
 
