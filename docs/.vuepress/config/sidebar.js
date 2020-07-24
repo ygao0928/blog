@@ -63,7 +63,7 @@ module.exports = {
       children: [
         { title: '前言', path: '/api/java/sql/' },
         { title: 'sql基本', path: '/api/java/sql/sql基本' },
-        { title: 'inner join 与 left join 之间的区别', path: '/api/java/sql/innerleft-join之间的区别' },
+        { title: 'sql join 用法', path: '/api/java/sql/sql-joins' },
         { title: 'mybatis基础', path: '/api/java/sql/mybatis基础' },
         { title: 'mybatis用法', path: '/api/java/sql/MyBatis用法' }
 

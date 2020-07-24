@@ -1,6 +1,16 @@
-# inner join 与 left join 之间的区别
+
 
 [[TOC]]
+
+# SQL Joins 用法
+
+> 在网上看到一张图非常直白的表明join的用法
+
+**SQL JOINS **:
+
+![image-20200724114954419](https://kevingao-blog.oss-cn-shanghai.aliyuncs.com/img/image-20200724114954419.png)
+
+## inner join 与 left join 之间的区别
 
 ### 区别
 
