@@ -43,6 +43,7 @@ module.exports = {
       children: [
         { title: '前言', path: '/api/java/designpattern/' },
         { title: '工厂模式', path: '/api/java/designpattern/工厂模式' }
+
       ]
     }
   ],
@@ -111,6 +112,7 @@ module.exports = {
       collapsable: false,
       children: [
         { title: '前言', path: '/api/other/' },
+        { title: ' JAVA 1.8 新特性', path: '/api/other/java1.8新特性' },
         { title: '宏运接口示例说明文档', path: '/api/other/宏运接口示例说明文档' }
       ]
     }
