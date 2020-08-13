@@ -3,6 +3,8 @@ sidebar: false
 ---
 # Hello Everyone 😃
 
+## World is powered by solitude
+
 👀本站刚刚建设，会慢慢完善。。。😃
 
 ## Technology stack :kissing_smiling_eyes:
