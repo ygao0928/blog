@@ -23,6 +23,17 @@ module.exports = {
     }
   ],
   //------------------------java
+
+  '/api/java/base/': [
+    {
+      title: 'Base',
+      collapsable: false,
+      children: [
+        { title: '前言', path: '/api/java/base/' }
+      ]
+    }
+
+  ],
   '/api/java/jvm/': [
     {
       title: 'JVM',
@@ -99,7 +110,7 @@ module.exports = {
       collapsable: false,
       children: [
         { title: '前言', path: '/api/java/redis/' },
-        { title: 'redis基础', path: '/api/java/redis/redis基础' }
+        { title: 'redis分布式锁', path: '/api/java/redis/redis分布式锁' }
 
       ]
     }

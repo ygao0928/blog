@@ -9,12 +9,13 @@ module.exports = [
     {
         text: "Java",
         items: [
+            { text: "Base", link: "/api/java/base/" },
             { text: "JVM", link: "/api/java/jvm/" },
             { text: "Thread", link: "/api/java/Thread/" },
-            { text: "sql", link: "/api/java/sql/" },
-            { text: "spring", link: "/api/java/spring/" },
-            { text: "springcloud", link: "/api/java/springcloud/" },
-            { text: "redis", link: "/api/java/redis/" },
+            { text: "Sql", link: "/api/java/sql/" },
+            { text: "Spring", link: "/api/java/spring/" },
+            { text: "Springcloud", link: "/api/java/springcloud/" },
+            { text: "Redis", link: "/api/java/redis/" },
             { text: "设计模式", link: "/api/java/designpattern/" },
         ]
     },
