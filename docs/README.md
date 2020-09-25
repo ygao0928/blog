@@ -11,7 +11,7 @@ sidebar: false
 
 ### Front End
 
-- [ ] Vue
+- [x] Vue
 - [ ] JavaScript
 - [ ] Html5
 - [ ] Css
