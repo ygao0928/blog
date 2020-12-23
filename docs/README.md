@@ -7,7 +7,7 @@ sidebar: false
 
 👀本站刚刚建设，会慢慢完善。。。😃
 
-## Technology stack :kissing_smiling_eyes:
+## Technology stack :kissing_smiling_eyes
 
 ### Front End
 
