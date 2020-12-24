@@ -41,7 +41,8 @@ module.exports = {
       children: [
         { title: '前言', path: '/api/java/jvm/' },
         { title: 'jvm初探', path: '/api/java/jvm/jvm初探' },
-        { title: 'jvm二探', path: '/api/java/jvm/jvm二探' }
+        { title: 'jvm二探', path: '/api/java/jvm/jvm二探' },
+        { title: '自动内存管理', path: '/api/java/jvm/自动内存管理01' }
       ]
     }
 
