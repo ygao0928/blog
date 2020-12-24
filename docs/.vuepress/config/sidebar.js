@@ -29,7 +29,9 @@ module.exports = {
       title: 'Base',
       collapsable: false,
       children: [
-        { title: '前言', path: '/api/java/base/' }
+        { title: '前言', path: '/api/java/base/' },
+        { title: 'Docker', path: '/api/java/base/docker' },
+        { title: 'Nginx', path: '/api/java/base/nginx' }
       ]
     }
 
