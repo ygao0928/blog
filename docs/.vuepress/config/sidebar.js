@@ -126,7 +126,8 @@ module.exports = {
       children: [
         { title: '前言', path: '/api/other/' },
         { title: ' JAVA 1.8 新特性', path: '/api/other/java1.8新特性' },
-        { title: '宏运接口示例说明文档', path: '/api/other/宏运接口示例说明文档' }
+        { title: '宏运接口示例说明文档', path: '/api/other/宏运接口示例说明文档' },
+        { title: '定时备份Docker的MySQL数据库', path: '/api/other/Linux定时备份Docker的MySql' }
       ]
     }
   ]
