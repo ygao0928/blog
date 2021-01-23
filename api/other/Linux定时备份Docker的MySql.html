@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux定时备份Docker的MySQL数据库 | Kevin的个人博客</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="一个在互联网苟且偷生的程序员">
+    
+    <link rel="preload" href="/assets/css/0.styles.fab77d47.css" as="style"><link rel="preload" href="/assets/js/app.8fadfcec.js" as="script"><link rel="preload" href="/assets/js/2.2b8b8768.js" as="script"><link rel="preload" href="/assets/js/34.95576be1.js" as="script"><link rel="prefetch" href="/assets/js/10.5dca3178.js"><link rel="prefetch" href="/assets/js/11.4925e09f.js"><link rel="prefetch" href="/assets/js/12.b13a23df.js"><link rel="prefetch" href="/assets/js/13.aee2f0ed.js"><link rel="prefetch" href="/assets/js/14.b0907ea8.js"><link rel="prefetch" href="/assets/js/15.60e6f8f6.js"><link rel="prefetch" href="/assets/js/16.61ff75ae.js"><link rel="prefetch" href="/assets/js/17.b76e6916.js"><link rel="prefetch" href="/assets/js/18.9db6aa36.js"><link rel="prefetch" href="/assets/js/19.25bb06ba.js"><link rel="prefetch" href="/assets/js/20.04a73d59.js"><link rel="prefetch" href="/assets/js/21.726b3fd7.js"><link rel="prefetch" href="/assets/js/22.e0a8229a.js"><link rel="prefetch" href="/assets/js/23.22d4b590.js"><link rel="prefetch" href="/assets/js/24.ea864b31.js"><link rel="prefetch" href="/assets/js/25.f4b9eaf6.js"><link rel="prefetch" href="/assets/js/26.3793b2ca.js"><link rel="prefetch" href="/assets/js/27.dcc38f10.js"><link rel="prefetch" href="/assets/js/28.bc34a77a.js"><link rel="prefetch" href="/assets/js/29.f88aef0e.js"><link rel="prefetch" href="/assets/js/3.e4205ea8.js"><link rel="prefetch" href="/assets/js/30.bcac92da.js"><link rel="prefetch" href="/assets/js/31.1619c394.js"><link rel="prefetch" href="/assets/js/32.9f624eb6.js"><link rel="prefetch" href="/assets/js/33.35a1ef8d.js"><link rel="prefetch" href="/assets/js/35.3617c92a.js"><link rel="prefetch" href="/assets/js/36.3cda87c6.js"><link rel="prefetch" href="/assets/js/37.0633f011.js"><link rel="prefetch" href="/assets/js/38.21047187.js"><link rel="prefetch" href="/assets/js/39.755b2385.js"><link rel="prefetch" href="/assets/js/4.77a548c8.js"><link rel="prefetch" href="/assets/js/40.b529a9f6.js"><link rel="prefetch" href="/assets/js/41.f4d87f95.js"><link rel="prefetch" href="/assets/js/5.5fd3c55b.js"><link rel="prefetch" href="/assets/js/6.706caab8.js"><link rel="prefetch" href="/assets/js/7.dfd330e0.js"><link rel="prefetch" href="/assets/js/8.88622c17.js"><link rel="prefetch" href="/assets/js/9.6c3417f5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fab77d47.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Kevin的个人博客" class="logo"> <span class="site-name can-hide">Kevin的个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/api/front/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/api/java/base/" class="nav-link">
+  Base
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/Thread/" class="nav-link">
+  Thread
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/sql/" class="nav-link">
+  Sql
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/springcloud/" class="nav-link">
+  Springcloud
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/designpattern/" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/api/other/" class="nav-link router-link-active">
+  其他
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="联系" class="dropdown-title"><span class="title">联系</span> <span class="arrow down"></span></button> <button type="button" aria-label="联系" class="mobile-dropdown-title"><span class="title">联系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="ygao0928@outlook.com.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  邮箱
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/ygao0928" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/api/front/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/api/java/base/" class="nav-link">
+  Base
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/jvm/" class="nav-link">
+  JVM
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/Thread/" class="nav-link">
+  Thread
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/sql/" class="nav-link">
+  Sql
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/springcloud/" class="nav-link">
+  Springcloud
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/api/java/designpattern/" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/api/other/" class="nav-link router-link-active">
+  其他
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="联系" class="dropdown-title"><span class="title">联系</span> <span class="arrow down"></span></button> <button type="button" aria-label="联系" class="mobile-dropdown-title"><span class="title">联系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="ygao0928@outlook.com.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  邮箱
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/ygao0928" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/api/other/" aria-current="page" class="sidebar-link">前言</a></li><li><a href="/api/other/java1.8新特性.html" class="sidebar-link"> JAVA 1.8 新特性</a></li><li><a href="/api/other/宏运接口示例说明文档.html" class="sidebar-link">宏运接口示例说明文档</a></li><li><a href="/api/other/Linux定时备份Docker的MySql.html" class="active sidebar-link">定时备份Docker的MySQL数据库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/api/other/Linux定时备份Docker的MySql.html#结束" class="sidebar-link">结束</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux定时备份docker的mysql数据库"><a href="#linux定时备份docker的mysql数据库" class="header-anchor">#</a> Linux定时备份Docker的MySQL数据库</h1> <h3 id="血的教训"><a href="#血的教训" class="header-anchor">#</a> 血的教训</h3> <p><img src="https://kevingao-blog.oss-cn-shanghai.aliyuncs.com/img/image-20210123223004940.png" alt="image-20210123223004940"></p> <h3 id="定时备份"><a href="#定时备份" class="header-anchor">#</a> 定时备份</h3> <ol><li><p>新建脚本命名为<code>mysql_bak.sh</code></p> <div class="language-dockerfile line-numbers-mode"><pre class="language-dockerfile"><code><span class="token comment"># mysql 为安装mysql的docker</span>
+<span class="token comment">#!/bin/bash</span>
+docker_name=mysql
+data_dir=<span class="token string">&quot;/data/backup/mysql/&quot;</span>
+docker exec <span class="token punctuation">-</span>it $docker_name mysqldump <span class="token punctuation">-</span>uroot <span class="token punctuation">-</span>p123456 <span class="token punctuation">-</span><span class="token punctuation">-</span>all<span class="token punctuation">-</span>databases <span class="token punctuation">&gt;</span> <span class="token string">&quot;$data_dir/solo_`date +%Y%m%d%H%M%S`.sql&quot;</span>
+<span class="token comment"># 删除7天以前的备份</span>
+find $data_dir <span class="token punctuation">-</span>mtime +7 <span class="token punctuation">-</span>name <span class="token string">'solo_*.sql'</span> <span class="token punctuation">-</span>exec rm <span class="token punctuation">-</span>rf <span class="token punctuation">{</span><span class="token punctuation">}</span> \;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><strong>备注</strong></p> <ul><li><p><code>docker_name</code>:<code>MySQL</code>容器名称</p></li> <li><p><code>data_dir</code>:保存路径</p></li> <li><p><code>--all-databases</code>:表示所有的数据库都备份，可以备份固定的数据库，直接替换就可以了</p></li> <li><p><code>-mtime +7</code>: 按照文件的更改时间来查找文件，+7表示文件更改时间距现在7天以前；如果是 -mmin +7表示文件更改时间距现在7分钟以前</p> <p>*<code>-exec rm -rf {}</code>; 表示执行一段shell命令，exec选项后面跟随着所要执行的命令或脚本，然后是一对儿{}，一个空格和一个，最后是一个分号</p></li></ul></li> <li><p>在定时任务中添加新的任务规则，<code>crontab -e</code>,将下面命令写入并报存:wq</p> <div class="language-dockerfile line-numbers-mode"><pre class="language-dockerfile"><code>0 0 * * * /bin/sh /data/mysql_bak.sh <span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span> /data/logs/mysql_bak.log 2<span class="token punctuation">&gt;</span>&amp;1
+
+PS：/data/logs/mysql_bak.log ：输出日志
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ol> <h2 id="结束"><a href="#结束" class="header-anchor">#</a> 结束</h2> <p><strong>学习是一种进步态度，笔记是一种成长的动作</strong></p> <p>参考地址：<a href="https://www.hjava.cn/articles/2019/08/28/1566980010076.html" target="_blank" rel="noopener noreferrer">Linux定时备份Docker的MySQL数据库<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2021年1月23日下午2点38分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/api/other/宏运接口示例说明文档.html" class="prev">
+        宏运接口示例说明文档
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8fadfcec.js" defer></script><script src="/assets/js/2.2b8b8768.js" defer></script><script src="/assets/js/34.95576be1.js" defer></script>
+  </body>
+</html>
