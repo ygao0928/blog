@@ -1,0 +1,22 @@
+{
+  "name": "vuepress2-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Kevin <ygao0928@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.42",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.42",
+    "vuepress": "^2.0.0-beta.43"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
+    "docs:clean": "rimraf .vuepress/.temp .vuepress/.cache .vuepress/dist"
+  }
+}
