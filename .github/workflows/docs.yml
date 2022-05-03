@@ -18,6 +18,8 @@ jobs:
     strategy:
       matrix:
         node-version: [16]
+    env:
+      NODE_VERSION: "16"
 
     steps:
       - name: Checkout # 步骤1
@@ -29,8 +31,8 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }} # 步骤2
         uses: actions/setup-node@v3 # 作用：安装nodejs
         with:
-          node-version: ${{ matrix.node-version }} # 版本
-          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }} # 版本
+
       - name: Install dependencies
         run: npm install -D vuepress@next && npm install
       - name: run deploy.sh # 步骤3
