@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16]
 
     steps:
       - name: Checkout # 步骤1
@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v3 # 作用：安装nodejs
         with:
           node-version: ${{ matrix.node-version }} # 版本
+          cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: run deploy.sh # 步骤3
