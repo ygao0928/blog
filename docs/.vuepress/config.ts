@@ -19,9 +19,7 @@ export default defineUserConfig({
       title: "不想淹死的魚的技术站",
       description:
         "技术博客,专注全栈学习与总结。Java,JavaScript,js,ES6,TypeScript,vue,css3,html5,git,github等技术文章。",
-      head: [
-        ["link", { rel: "icon", href: "http://img.thee.top/logo/logo.png" }],
-      ],
+      head: [["link", { rel: "icon", href: "/images/logo.png" }]],
     },
   },
 
@@ -29,7 +27,7 @@ export default defineUserConfig({
     // 在这里进行配置
     docsDir: "docs", // 编辑的文件夹
 
-    logo: "http://img.thee.top/logo/logo.png",
+    logo: "/images/logo.png",
     // navbar
     navbar: navbar.zh,
 

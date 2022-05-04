@@ -1,7 +1,7 @@
 ---
 home: true
 title: 首页
-heroImage: /images/hero.png
+heroImage: /images/logo.png
 
 features:
   - title: 简洁至上
